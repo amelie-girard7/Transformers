@@ -2,81 +2,69 @@
 
 ## Table of Contents
 1. [Introduction](#introduction)
-2. [Prerequisites](#prerequisites)
-3. [Key Concepts](#key-concepts)
+2. [Architectue](#Architectue)
+3. [Flow of information](#flowofinformation)
+4. [Hands-On Examples](#handsonexamples)
+    1. [Text classification (sentiment analysis)](./TextClassification.ipynb)
+    2. [Text generation and feature extraction](./Simple_Transformer_Language_Model.ipynb)
+    3. [Model evaluation](./transformer_tutorial_pytorch.ipynb)
+5. [Key Concepts](#key-concepts)
     1. [Attention Mechanism](#attention-mechanism)
     2. [Multi-Head Attention](#multi-head-attention)
     3. [Encoder-Decoder Architecture](#encoder-decoder-architecture)
-4. [Installation](#installation)
-5. [Hands-On Example: Text Classification](#hands-on-example-text-classification)
 6. [Conclusion](#conclusion)
 
 ## Introduction
-Transformers are a type of machine learning model introduced in the paper "Attention Is All You Need" by Vaswani et al. They have been highly influential in the field of NLP and have set new benchmarks in a variety of tasks.
+ Transformer – a model that uses attention to boost the speed with which these models can be trained. The biggest benefit, however, comes from how The Transformer lends itself to parallelization.In order to understand why Transformers are so important you need to understand how previous models functioned. So let’s try to break the model apart and look at how it functions.
+ The Transformer was proposed in the paper [Attention is All You Need](https://arxiv.org/pdf/1706.03762.pdf). 
 
-## Prerequisites
-- Basic understanding of Python programming
-- Familiarity with machine learning and NLP
-- Installation of Python 3.x and pip
+## Architectue
+This is the architecture of Transformer if you haven't see this before.
+<img src="./img/transformer_architecture.jpg">
 
-## Key Concepts
+## Flow of information 
+The flow of information in a Transformer model for a sequence-to-sequence task with a classification objective (e.g., next word prediction) can be described as follows:
 
-### Attention Mechanism
-Attention allows the model to focus on relevant parts of the input when producing the output. It is essentially a weighted sum of the input features.
+##### Step 1: Tokenization and Input Embedding
+The input sentence "Je suis un étudiant" is tokenized into a sequence of subwords or words. These tokens are then converted into embeddings via an embedding layer.
 
-### Multi-Head Attention
-This is an extension of the basic attention mechanism, allowing the model to focus on different parts of the input for different tasks or reasons.
+**Tokenized Sentence**: \['Je', 'suis', 'un', 'étudiant'\]  
+**Embedded Tokens**: \[ \text{Embedding}('Je'), \text{Embedding}('suis'), \text{Embedding}('un'), \text{Embedding}('étudiant') \]
 
-### Encoder-Decoder Architecture
-Transformers generally consist of an Encoder to process the input and a Decoder to produce the output. Some models like BERT use only the Encoder part for tasks like text classification.
+##### Step 2: Addition of Positional Encoding (Time Signal)
+Positional encodings are added to these embeddings to give the model information about the position of each word in the sequence. This is crucial since Transformers do not inherently understand the sequence order.
 
-## Installation
+**Position-Encoded Embeddings**: \[ \text{Embedding}('Je') + \text{PositionalEncoding}(1), \ldots \]
 
-To install the Hugging Face Transformers library, run:
+##### Step 3: Encoder
+The sequence of position-encoded embeddings is passed through the encoder, which consists of several layers of multi-head attention and feed-forward neural networks. The encoder outputs a "hidden representation" of the input.
 
-\`\`\`bash
-pip install transformers
-\`\`\`
+**Hidden Representation**: \( \text{EncoderOutput} \)
 
-## Hands-On Example: Text Classification
+##### Step 4: Decoder
+The hidden representation is then passed through the decoder, which also has layers of multi-head attention and feed-forward neural networks. The decoder aims to reconstruct or transform this hidden representation into another sequence, usually for tasks like translation or summarization.
 
-In this example, we will use the DistilBERT model for text classification.
+**Decoded Sequence**: \( \text{DecoderOutput} \)
 
-First, import the required libraries:
+##### Step 5: Task-Specific Layer (Classification)
+The output of the decoder is finally passed through a task-specific layer. In the case of next-word prediction, this would typically be a softmax layer that converts the decoder output into a probability distribution over the vocabulary.
 
-\`\`\`python
-from transformers import DistilBertTokenizer, DistilBertForSequenceClassification
-import torch
-\`\`\`
+**Next Word Prediction**: \( \text{Softmax}(\text{DecoderOutput}) \)
 
-Initialize the tokenizer and model:
+##### Step 6: Loss Computation and Backpropagation
+A loss is computed based on the difference between the predicted next word and the actual next word in the sequence. This loss is then used to update the model parameters during training via backpropagation.
 
-\`\`\`python
-tokenizer = DistilBertTokenizer.from_pretrained('distilbert-base-uncased')
-model = DistilBertForSequenceClassification.from_pretrained('distilbert-base-uncased')
-\`\`\`
+**Loss**: \( \text{Loss}(\text{Predicted}, \text{Actual}) \)
 
-Tokenize a sample text and obtain the model output:
+The model starts by converting the input words into an enriched form that captures both their meaning and their position in the sentence. This enriched representation is transformed by the encoder into a hidden state, which the decoder then tries to use to accomplish the task at hand. Finally, the model's performance on this task is assessed using a loss function, and the model is updated accordingly.
 
-\`\`\`python
-text = "Hello, how are you?"
-inputs = tokenizer(text, return_tensors="pt")
+NB: The model processes all inputs simultaneously, yet produces a singular output.
 
-outputs = model(**inputs)
+## Hands-On Example
+- [Text classification (sentiment analysis)](./Transformers_samples/TextClassification.ipynb)
+- [Text generation and feature extraction](./Transformers_samples/transformer_tutorial_pytorch.ipynb)
+- [Model evaluation](./Transformers_samples/transformer_tutorial_pytorch.ipynb)
 
-logits = outputs.logits
-\`\`\`
-
-Now, you can obtain the prediction:
-
-\`\`\`python
-import torch.nn.functional as F
-
-probs = F.softmax(logits, dim=1)
-prediction = torch.argmax(probs, dim=1)
-
-print(f"Prediction: {prediction}")
-\`\`\`
 
 ## Conclusion
 Transformers have revolutionized the field of NLP and continue to be a subject of active research. This hands-on example is just the tip of the iceberg, and there's much more to explore!

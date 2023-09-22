@@ -1,0 +1,6 @@
+# Ignore Python virtual environments
+venv/
+__pycache__/
+
+# Ignore the site-packages directory if it's in your repo
+site-packages/

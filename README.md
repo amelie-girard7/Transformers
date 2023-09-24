@@ -3,7 +3,7 @@
 
 ## Table of Contents
 1. [Introduction](#introduction)
-2. [Models Architecture](#architecture)
+2. [Models Architecture](#Architecture)
 3. [Information Flow](#information-flow)
 4. [Hands-On Examples](#hands-on-examples)
 5. [Key Concepts](#key-concepts)
@@ -52,14 +52,12 @@ Beyond single-mode tasks, Transformer models also excel at multi-modal functions
 
 ---
 
-## architecture
+## Architecture
 
-![Transformer Design](./img/transformer_design.jpg)
+![Transformer Design](./img/transformer_architecture.jpg)
 
 The design of the Transformer model consists of an Encoder-Decoder framework, enhanced by Multi-Head Attention features, which we will delve into more deeply.
-
 All model states supplied by 🤗 Transformers are effortlessly amalgamated from the [huggingface.co model repository](https://huggingface.co/models), where they are directly uploaded.
-
 For a comprehensive overview of the various architectures offered by Transformers, you can refer to the [architecture summary](https://huggingface.co/docs/transformers/model_summary) on their documentation page.
 
 ---

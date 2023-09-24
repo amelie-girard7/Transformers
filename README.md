@@ -23,8 +23,6 @@ This repository is designed to provide an in-depth understanding of Transformer 
 
 Beyond single-mode tasks, Transformer models also excel at multi-modal functions. These include answering questions based on tabular data, recognizing text from scanned documents, extracting relevant information from those documents, classifying videos, and performing visual-based question answering.
 
-
-
 ### Why Transformers?
 
 1. **Parallelization**: Unlike RNNs, where computations are dependent on the previous step, Transformers allow for parallelization as each word or token is processed simultaneously. This dramatically speeds up training.
@@ -92,6 +90,7 @@ These Jupyter notebooks provide practical implementations to solidify your under
 - [Attention Mechanism](./src/Attention.ipynb)
 - [Multi-Head Attention](./src/Multi_Head.ipynb)
 
+---
 
 ## Installation
 
@@ -108,8 +107,6 @@ conda install -c huggingface transformers
 ```
 
 For more detailed installation instructions, please refer to the [Installation Guide](#installation).
-
----
 
 ---
 

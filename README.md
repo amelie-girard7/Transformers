@@ -50,7 +50,7 @@ Beyond single-mode tasks, Transformer models also excel at multi-modal functions
 
 ---
 
-## Architecture
+## Models Architecture
 
 ![Transformer Design](./img/transformer_architecture.jpg)
 

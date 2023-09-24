@@ -3,7 +3,7 @@
 
 ## Table of Contents
 1. [Introduction](#introduction)
-2. [Architecture](#architecture)
+2. [Models Architecture](#architecture)
 3. [Information Flow](#information-flow)
 4. [Hands-On Examples](#hands-on-examples)
 5. [Key Concepts](#key-concepts)
@@ -23,9 +23,9 @@ This repository is designed to provide an in-depth understanding of Transformer 
 
 Beyond single-mode tasks, Transformer models also excel at multi-modal functions. These include answering questions based on tabular data, recognizing text from scanned documents, extracting relevant information from those documents, classifying videos, and performing visual-based question answering.
 
----
 
-## Why Transformers?
+
+### Why Transformers?
 
 1. **Parallelization**: Unlike RNNs, where computations are dependent on the previous step, Transformers allow for parallelization as each word or token is processed simultaneously. This dramatically speeds up training.
 
@@ -37,9 +37,8 @@ Beyond single-mode tasks, Transformer models also excel at multi-modal functions
 
 5. **Pre-trained Models**: The architecture's effectiveness has led to a plethora of pre-trained models, which can be fine-tuned for specific tasks, saving time and computational resources.
 
----
 
-## Why Not Transformers?
+### Why Not Transformers?
 
 1. **Computational Overheads**: The architecture can be resource-intensive, requiring significant amounts of memory and computational power, particularly for large datasets or complex tasks.
 
@@ -53,7 +52,7 @@ Beyond single-mode tasks, Transformer models also excel at multi-modal functions
 
 ---
 
-## Models Architectures
+## architecture
 
 ![Transformer Design](./img/transformer_design.jpg)
 
@@ -96,15 +95,6 @@ These Jupyter notebooks provide practical implementations to solidify your under
 - [Multi-Head Attention](./src/Multi_Head.ipynb)
 
 
----
-
-## Conclusion
-
-This repository aims to serve as an exhaustive guide for understanding the intricacies of Transformer models. Whether you are a researcher, data scientist, or machine learning enthusiast, the content herein should offer a thorough understanding of how Transformers work and how they can be applied across various domains.
-
----
-
-
 ## Installation
 
 ### With pip
@@ -123,6 +113,13 @@ For more detailed installation instructions, please refer to the [Installation G
 
 ---
 
+---
+
+## Conclusion
+
+This repository aims to serve as an exhaustive guide for understanding the intricacies of Transformer models. Whether you are a researcher, data scientist, or machine learning enthusiast, the content herein should offer a thorough understanding of how Transformers work and how they can be applied across various domains.
+
+---
 
 
 ## References 

@@ -3,7 +3,7 @@
 
 ## Table of Contents
 1. [Introduction](#introduction)
-2. [Models Architecture](#Architecture)
+2. [Models Architecture](#models-architecture)
 3. [Information Flow](#information-flow)
 4. [Hands-On Examples](#hands-on-examples)
 5. [Key Concepts](#key-concepts)
@@ -119,5 +119,5 @@ This repository aims to serve as an exhaustive guide for understanding the intri
 
 ## References 
 
-The Illustrated Transformer https://jalammar.github.io/illustrated-transformer/
-Hugging face Tranformers https://huggingface.co/docs/transformers/index
+- The Illustrated Transformer https://jalammar.github.io/illustrated-transformer/
+- Hugging face Tranformers https://huggingface.co/docs/transformers/index

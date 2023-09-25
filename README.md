@@ -3,7 +3,7 @@
 
 ## Table of Contents
 1. [Introduction](#introduction)
-2. [Models Architecture](#Architecture)
+2. [Models Architecture](#architecture)
 3. [Information Flow](#information-flow)
 4. [Hands-On Examples](#hands-on-examples)
 5. [Key Concepts](#key-concepts)
@@ -13,7 +13,36 @@
 ---
 ## Introduction
 
-This repository is designed to provide an in-depth understanding of Transformer models, which have been pivotal in advancing the field of Natural Language Processing (NLP). Originating from the paper [Attention is All You Need](https://arxiv.org/pdf/1706.03762.pdf), Transformer models have set new benchmarks in a variety of tasks by leveraging attention mechanisms for both speed and performance. These models are versatile and can be employed for various applications:
+This repository is designed to provide an in-depth understanding of Transformer models, which have been pivotal in advancing the field of Natural Language Processing (NLP). Originating from the paper [Attention is All You Need](https://arxiv.org/pdf/1706.03762.pdf). Here are some reference points in the history of transformer models:
+
+![Transformers History](./img/Transformers_history.jpg)
+
+ Broadly, transformers can be grouped into three categories:
+        
+        - BERT-like (also called auto-encoding Transformer models)
+        - GPT-like (also called auto-regressive Transformer models)
+        - BART/T5-like (also called sequence-to-sequence Transformer models)
+
+#### What are Transformers 
+All the listed Transformer models, including GPT, BERT, BART, and T5, are fundamentally designed as language models. They are trained using self-supervised learning techniques on extensive corpuses of raw, unlabeled text. In self-supervised learning, the model generates its own labels from the input data, thus obviating the need for human-annotated labels. 
+
+In terms of architecture size and pretraining data, the trend generally leans towards larger models for enhanced performance. However, this comes with substantial computational and environmental costs, as seen in increased time requirements and carbon footprints. Consequently, there's a growing emphasis on sharing pretrained models to mitigate both computational expenditure and environmental impact.
+
+Despite their extensive training, these pretrained models are not directly applicable for specialized tasks out of the box. This limitation is addressed through a technique called transfer learning. In transfer learning, a pretrained model is fine-tuned using a dataset that has been labeled for a specific task, essentially adapting the model's generalized understanding of language to the nuances of that task.
+
+One such specialized task is causal language modeling, which involves predicting the next word in a sequence based solely on its preceding and current words. This is called "causal" because the prediction is contingent on past and present inputs, without any knowledge of future context. This task exemplifies how a model's generalized capabilities can be fine-tuned to perform more specialized operations.
+
+![Causal Language Modelling](./img/causal_language.jpg)
+
+Another example is masked language modelling, whick predicts a masked word in the sentence. 
+
+![Masked Language Modelling](./img/mask.jpg)
+
+
+
+#### Application
+
+ Transformer models have set new benchmarks in a variety of tasks by leveraging attention mechanisms for both speed and performance. These models are versatile and can be employed for various applications:
 
 📝 For text-based activities, they can perform functions like categorizing text, extracting relevant information, responding to queries, summarizing content, translating languages, and generating text. They are capable of handling these tasks in more than 100 different languages.
   
@@ -23,7 +52,7 @@ This repository is designed to provide an in-depth understanding of Transformer 
 
 Beyond single-mode tasks, Transformer models also excel at multi-modal functions. These include answering questions based on tabular data, recognizing text from scanned documents, extracting relevant information from those documents, classifying videos, and performing visual-based question answering.
 
-### Why Transformers?
+#### Why Transformers?
 
 1. **Parallelization**: Unlike RNNs, where computations are dependent on the previous step, Transformers allow for parallelization as each word or token is processed simultaneously. This dramatically speeds up training.
 
@@ -36,7 +65,7 @@ Beyond single-mode tasks, Transformer models also excel at multi-modal functions
 5. **Pre-trained Models**: The architecture's effectiveness has led to a plethora of pre-trained models, which can be fine-tuned for specific tasks, saving time and computational resources.
 
 
-### Why Not Transformers?
+#### Why Not Transformers?
 
 1. **Computational Overheads**: The architecture can be resource-intensive, requiring significant amounts of memory and computational power, particularly for large datasets or complex tasks.
 
@@ -94,13 +123,13 @@ These Jupyter notebooks provide practical implementations to solidify your under
 
 ## Installation
 
-### With pip
+#### With pip
 
 ```bash
 pip install transformers
 ```
 
-### With conda
+#### With conda
 
 ```bash
 conda install -c huggingface transformers
@@ -118,6 +147,24 @@ This repository aims to serve as an exhaustive guide for understanding the intri
 
 
 ## References 
+• The Transformer architecture : Encoder  
+           https://www.youtube.com/watch?v=H39Z_720T5s&t=0s
 
-The Illustrated Transformer https://jalammar.github.io/illustrated-transformer/
-Hugging face Tranformers https://huggingface.co/docs/transformers/index
+ • The Transformer architecture : Encoder  
+        Encoder models:   https://www.youtube.com/watch?v=MUqNwgPjJvQ&t=0s
+
+ • Transformer models: Decoder  
+        Decoder models:   https://www.youtube.com/watch?v=d_ixlCubqQw&t=0s
+
+ • Transformer models: Encoder-Decoders 
+        Encoder-Decoders: https://www.youtube.com/watch?v=0_4KEb08xrE&t=0s 
+
+
+To understand what happens inside the Transformer network on a deeper level.
+- The Illustrated Transformer: https://jalammar.github.io/illustrated-transformer/
+- The Illustrated GPT-2: https://jalammar.github.io/illustrated-gpt2/
+- Understanding Attention: https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/
+
+
+Furthermore, for a code-oriented perspective, we recommend taking a look at the following post:
+- The Annotated Transformer, by Harvard NLP https://nlp.seas.harvard.edu/2018/04/03/attention.html

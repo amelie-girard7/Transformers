@@ -14,7 +14,7 @@
 
 This repository aims to offer a detailed exploration of Transformer models, a cornerstone in the advancement of Natural Language Processing (NLP). Originated from the seminal paper, [Attention is All You Need](https://arxiv.org/pdf/1706.03762.pdf), this guide outlines the historical milestones of Transformer models:
 
-![Timeline of Transformers](./src/Transformers_timeline.jpg)
+![Timeline of Transformers](./img/transformers_history.jpg)
 
 Transformers are generally categorized into:
 - Auto-encoding models like BERT
@@ -61,7 +61,7 @@ They are also proficient in multi-modal tasks, including question answering from
 
 ## Architectural Overview
 
-![Transformer Architecture](./src/transformer_design.jpg)
+![Transformer Architecture](./img/transformer_architecture.jpg)
 
 The Transformer model is built on an Encoder-Decoder structure, enhanced by Multi-Head Attention mechanisms. Prebuilt models can be easily imported from the [Hugging Face model repository](https://huggingface.co/models).
 

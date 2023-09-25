@@ -3,7 +3,11 @@
 
 ## Table of Contents
 1. [Introduction](#introduction)
+<<<<<<< HEAD
 2. [Models Architecture](#architecture)
+=======
+2. [Models Architecture](#models-architecture)
+>>>>>>> 021179fe8f444589b297f15fd7a0aba277425608
 3. [Information Flow](#information-flow)
 4. [Hands-On Examples](#hands-on-examples)
 5. [Key Concepts](#key-concepts)
@@ -167,5 +171,10 @@ To understand what happens inside the Transformer network on a deeper level.
 - Understanding Attention: https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/
 
 
+<<<<<<< HEAD
 Furthermore, for a code-oriented perspective, we recommend taking a look at the following post:
 - The Annotated Transformer, by Harvard NLP https://nlp.seas.harvard.edu/2018/04/03/attention.html
+=======
+- The Illustrated Transformer https://jalammar.github.io/illustrated-transformer/
+- Hugging face Tranformers https://huggingface.co/docs/transformers/index
+>>>>>>> 021179fe8f444589b297f15fd7a0aba277425608

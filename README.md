@@ -42,6 +42,7 @@ Another example is masked language modelling, whick predicts a masked word in th
 
 #### Application
 
+
  Transformer models have set new benchmarks in a variety of tasks by leveraging attention mechanisms for both speed and performance. These models are versatile and can be employed for various applications:
 
 📝 For text-based activities, they can perform functions like categorizing text, extracting relevant information, responding to queries, summarizing content, translating languages, and generating text. They are capable of handling these tasks in more than 100 different languages.

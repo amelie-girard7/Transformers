@@ -3,16 +3,13 @@
 
 ## Table of Contents
 1. [Introduction](#introduction)
-<<<<<<< HEAD
-2. [Models Architecture](#architecture)
-=======
 2. [Models Architecture](#models-architecture)
->>>>>>> 021179fe8f444589b297f15fd7a0aba277425608
 3. [Information Flow](#information-flow)
 4. [Hands-On Examples](#hands-on-examples)
 5. [Key Concepts](#key-concepts)
-6. [Conclusion](#conclusion)
-7. [Installation](#installation)
+6. [Installation](#installation)
+7. [Conclusion](#conclusion)
+7. [References](#references)
 
 ---
 ## Introduction
@@ -45,7 +42,6 @@ Another example is masked language modelling, whick predicts a masked word in th
 
 
 #### Application
-
 
  Transformer models have set new benchmarks in a variety of tasks by leveraging attention mechanisms for both speed and performance. These models are versatile and can be employed for various applications:
 
@@ -169,12 +165,3 @@ To understand what happens inside the Transformer network on a deeper level.
 - The Illustrated Transformer: https://jalammar.github.io/illustrated-transformer/
 - The Illustrated GPT-2: https://jalammar.github.io/illustrated-gpt2/
 - Understanding Attention: https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/
-
-
-<<<<<<< HEAD
-Furthermore, for a code-oriented perspective, we recommend taking a look at the following post:
-- The Annotated Transformer, by Harvard NLP https://nlp.seas.harvard.edu/2018/04/03/attention.html
-=======
-- The Illustrated Transformer https://jalammar.github.io/illustrated-transformer/
-- Hugging face Tranformers https://huggingface.co/docs/transformers/index
->>>>>>> 021179fe8f444589b297f15fd7a0aba277425608
